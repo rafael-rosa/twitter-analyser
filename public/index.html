@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="twitteran">
+	<head>
+		<base href="/">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Twitter # analyser v1</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/efeitos.css">
+		<link rel="icon" href="img/favicon.png">
+		<script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-animate.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/angular-resource.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/controllers/controller.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron text-center">
+				<img class="img-responsive center-block" src="img/logo2.png" alt="logo">
+				<h2>Twitter # analyser</h2>
+			</div>
+
+			<ng-view></ng-view>
+
+		</div> <!-- fim container -->        
+	</body>
+</html>

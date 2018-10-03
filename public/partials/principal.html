@@ -1,0 +1,93 @@
+<p ng-show="mensagem.length" class="alert alert-info">
+	{{mensagem}}
+</p>
+
+<form novalidate name="formulario" class="row" ng-submit="submeter()">
+	<div class="col-md-12">
+		<div class="input-group">
+	<!--		<label>Título</label> -->
+			<input name="query" class="form-control" placeholder="Digite uma ou mais Hashtag(s) para obter as métricas" ng-model="twitter.query" required>  
+
+			<span class="input-group-btn">
+				<button type="submit" class="btn btn-primary" ng-disabled="formulario.$invalid">
+					CONSULTAR
+				</button>
+			</span>
+		</div>
+		<hr>
+	</div>
+
+</form>
+
+
+<div class="container">
+	<h2>Análise dos Resultados</h2>
+	<div class="panel panel-default">
+		<div class="panel-heading">Top 5 usuários mais influentes da amostra</div>
+		<div class="panel-body">
+
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<tbody class="table-striped">
+						<tr>
+							<th>Login</th>
+							<th>Número de seguidores</th>
+						</tr>
+						<tr ng-repeat="us in usuarios">
+							<td>{{us.USER}}</td>
+							<td>{{us.FOLLOWERS_COUNT}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Total de postagens X Hora</div>
+		<div class="panel-body">
+
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<tbody class="table-striped">
+						<tr>
+							<th>Hora</th>
+							<th>Total de Tweets</th>
+						</tr>
+						<tr ng-repeat="twH in tweetsHora">
+							<td>{{twH.HOUR}}:00</td>
+							<td>{{twH.TWEETS_COUNT}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Total de postagens X Idioma</div>
+		<div class="panel-body">
+
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<tbody class="table-striped">
+						<tr>
+							<th>Idioma</th>
+							<th>Total de Tweets</th>
+						</tr>
+						<tr ng-repeat="twL in tweetsIdioma">
+							<td>{{twL.LANGUAGE}}</td>
+							<td>{{twL.TWEETS_COUNT}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<hr>
+
